@@ -74,7 +74,7 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-# ESLINT AND PRETTIER INSTALLATION
+# ESLINT AND PRETTIER INSTALLATION (NUXT)
 
 1. INSTALL ESLINT AND TS
 
