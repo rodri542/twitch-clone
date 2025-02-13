@@ -20,6 +20,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@nuxt/eslint": "^1.0.1",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
