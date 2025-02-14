@@ -1,6 +1,12 @@
 @use "sass:map";
+
 $bg-colors: (
     'main-background-color': #0E0E10,
+
+);
+
+$text-colors: (
+    'main-text-color': white,
 
 );
     
@@ -11,10 +17,10 @@ $bg-colors: (
 
 body,html{
     background-color: map.get($bg-colors , 'main-background-color' );
+    color: map.get($text-colors , 'main-text-color' );
 
 }
 
 .page-container{
-    @include page-container-conf;
 
 }
