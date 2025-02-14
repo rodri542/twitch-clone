@@ -9,5 +9,11 @@
   },
   "LeftSideBarTexts":{
     "recomChan": "RECOMMENDED CHANNELS"
+  },
+  "HomePageTexts":{
+    "LiveChan": "Live channels",
+    "WeThink": "we think you'll like",
+    "ShMor": "Show more"
   }
+
   }

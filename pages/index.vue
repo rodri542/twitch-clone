@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div>
-    <h1>Este es tu index</h1>
+  <div class="HomePage">
+    <HomepageComponentsStreamerBlock />
   </div>
 </template>
+
+<style scoped>
+.HomePage {
+  width: 100%;
+}
+</style>
