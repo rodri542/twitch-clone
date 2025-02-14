@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint', 
   ],
   css: [
+    '~/assets/styles/reset.css',
     '~/assets/styles/main.scss' 
   ], 
 })
