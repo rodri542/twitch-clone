@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import texts from '@/assets/data/texts.json'
+defineProps<{
+  principalText: string
+  secondaryText: string
+}>()
 </script>
 
 <template>
   <h2 class="section-title">
-    <span class="section-title__highlight">{{ texts.HomePageTexts.LiveChan }}</span>
-    {{ texts.HomePageTexts.WeThink }}
+    <span class="section-title__highlight">{{ principalText }}</span>
+    {{ secondaryText }}
   </h2>
 </template>
 

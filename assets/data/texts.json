@@ -13,7 +13,47 @@
   "HomePageTexts":{
     "LiveChan": "Live channels",
     "WeThink": "we think you'll like",
-    "ShMor": "Show more"
+    "ShMor": "Show more",
+    "Cat": "Categories"
+  },
+  "Categories": [
+    {
+      "id": "Games",
+      "name": "Games",
+      "icon": "/images/creative.png"
+      
+    },
+    {
+      "id": "irl",
+      "name": "IRL",
+      "icon": "/images/irl.png"
+    },
+    {
+      "id": "musicDJs",
+      "name": "Music & DJs",
+      "icon": "/images/music.png"
+    },
+    {
+      "id": "creative",
+      "name": "Creative",
+      "icon": "/images/creative.png"
+    },
+    {
+      "id": "esports",
+      "name": "Esports",
+      "icon": "/images/esports.png"
+    }
+  ],
+  "Icons": {
+    "Collapse": "/public/icons/collapse.svg",
+    "Down": "/public/icons/down.svg",
+    "More": "/public/icons/more.svg",
+    "Notification": "/public/icons/notification.svg",
+    "Profile": "/public/icons/profile.svg",
+    "Search": "/public/icons/search.svg"
+  },
+  "Images":{
+    "Logo": ""
   }
 
   }

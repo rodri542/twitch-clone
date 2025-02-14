@@ -4,9 +4,9 @@ import texts from '@/assets/data/texts.json'
 <template>
   <section>
     <HomepageComponentsHeatherText
-      :principal-text="texts.HomePageTexts.LiveChan"
+      :principal-text="texts.HomePageTexts.Cat"
       :secondary-text="texts.HomePageTexts.WeThink"
     />
-    <HomepageComponentsStreamerBlockComponentsShowMore />
+    <HomepageComponentsCategoriesBlockComponentsCategoriesButtonsList />
   </section>
 </template>
