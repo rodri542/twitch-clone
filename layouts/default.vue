@@ -2,7 +2,8 @@
 <template>
   <div class="layout">
     <AppHeader />
-    <main>
+    <main class="main__index">
+      <LeftSideBar />
       <slot />
     </main>
     <AppFooter />

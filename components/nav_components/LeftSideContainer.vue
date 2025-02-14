@@ -10,7 +10,7 @@ import texts from '@/assets/data/texts.json'
         alt="Midutch Logo"
         class="left-side__logo-logoimg"
       />
-      <span class="left-side__logo-text">{{ texts.navLeftSideText }}</span>
+      <span class="left-side__logo-text">{{ texts.navText.navLeftSideText }}</span>
       <img src="/public/icons/more.svg" alt="Midutch Logo" class="left-side__logo-moresvg" />
     </div>
   </div>
@@ -41,7 +41,6 @@ import texts from '@/assets/data/texts.json'
       align-items: center;
       justify-content: center;
       padding: 0.3125em;
-      color: white;
       filter: invert(1);
     }
   }

@@ -6,5 +6,8 @@
     "loginButton": "Log In",
     "signUpButton": "Log In"
     
+  },
+  "LeftSideBarTexts":{
+    "recomChan": "RECOMMENDED CHANNELS"
   }
   }

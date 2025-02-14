@@ -1,6 +1,7 @@
 @use "sass:map";
-@import "reset.css";
-@import "vars";
+@use "reset";
+@use "vars" as *;
+
 
 @mixin responsive($size) {
     @media (max-width: map.get($breakpoints, $size)) {
@@ -26,6 +27,13 @@
 
 body,html{
     @include page-container-conf();
+}
+
+.main__index{
+    display: flex;
+    flex-direction: row;
+    padding: 1.25em 1.25em;
+    gap:  0.625;
 }
 
 .nav{
