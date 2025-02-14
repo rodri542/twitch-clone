@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import texts from '@/assets/data/texts.json'
-console.log(texts.Categories[1].icon)
 </script>
 
 <template>
@@ -19,15 +18,21 @@ console.log(texts.Categories[1].icon)
 @use '@/assets/styles/main.scss' as *;
 
 .categories-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   padding: 0.6rem;
 
-  @include responsive('md') {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  @include responsive('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include responsive('sm') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive('xs') {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>
