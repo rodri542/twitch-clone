@@ -10,17 +10,13 @@ const notificationCount = ref(63)
   <div class="navbar">
     <div class="navbar__notification">
       <span class="navbar__notification-counter">{{ notificationCount }}</span>
-      <img
-        src="/public/icons/notification.svg"
-        alt="Premium Icon"
-        class="navbar__notification-icon"
-      />
+      <img :src="texts.Icons.Notification" alt="Premium Icon" class="navbar__notification-icon" />
     </div>
 
     <Button :color="'secondary'">{{ texts.ButtonTexts.loginButton }}</Button>
     <Button :color="'primary'">{{ texts.ButtonTexts.signUpButton }}</Button>
 
-    <img src="/public/icons/profile.svg" alt="User Icon" class="navbar__notification-userIcon" />
+    <img :src="texts.Icons.Profile" alt="User Icon" class="navbar__notification-userIcon" />
   </div>
 </template>
 

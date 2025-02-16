@@ -13,7 +13,7 @@ const channels = [
     <div class="recommended-channels__header">
       <span>{{ texts.LeftSideBarTexts.recomChan }}</span>
       <img
-        src="/public/icons/collapse.svg"
+        :src="texts.Icons.Collapse"
         alt="Collapse Icon"
         class="recommended-channels__collapse-icon"
       />

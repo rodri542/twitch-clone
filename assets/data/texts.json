@@ -45,12 +45,12 @@
     }
   ],
   "Icons": {
-    "Collapse": "/public/icons/collapse.svg",
-    "Down": "/public/icons/down.svg",
-    "More": "/public/icons/more.svg",
-    "Notification": "/public/icons/notification.svg",
-    "Profile": "/public/icons/profile.svg",
-    "Search": "/public/icons/search.svg"
+    "Collapse": "/icons/collapse.svg",
+    "Down": "/icons/down.svg",
+    "More": "/icons/more.svg",
+    "Notification": "/icons/notification.svg",
+    "Profile": "/icons/profile.svg",
+    "Search": "/icons/search.svg"
   },
   "Images":{
     "Logo": ""

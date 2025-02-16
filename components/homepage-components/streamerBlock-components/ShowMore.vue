@@ -7,7 +7,7 @@ import texts from '@/assets/data/texts.json'
     <div class="show-more__line" />
     <button class="show-more__button">
       {{ texts.HomePageTexts.ShMor }}
-      <img src="/public/icons/down.svg" alt="User Icon" class="show-more__icon" />
+      <img :src="texts.Icons.Down" alt="User Icon" class="show-more__icon" />
     </button>
     <div class="show-more__line" />
   </div>

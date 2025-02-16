@@ -11,7 +11,7 @@ import texts from '@/assets/data/texts.json'
         class="left-side__logo-logoimg"
       />
       <span class="left-side__logo-text">{{ texts.navText.navLeftSideText }}</span>
-      <img src="/public/icons/more.svg" alt="Midutch Logo" class="left-side__logo-moresvg" />
+      <img :src="texts.Icons.More" alt="Midutch Logo" class="left-side__logo-moresvg" />
     </div>
   </div>
 </template>
