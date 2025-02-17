@@ -7,6 +7,7 @@ import texts from '@/assets/data/texts.json'
       :principal-text="texts.HomePageTexts.LiveChan"
       :secondary-text="texts.HomePageTexts.WeThink"
     />
+    <HomepageComponentsStreamerBlockComponentsStreamerBlockList />
     <HomepageComponentsStreamerBlockComponentsShowMore />
   </section>
 </template>

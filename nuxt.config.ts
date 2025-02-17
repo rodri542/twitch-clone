@@ -9,4 +9,11 @@ export default defineNuxtConfig({
     '~/assets/styles/reset.css',
     '~/assets/styles/main.scss' 
   ], 
+  runtimeConfig: {
+    twitchClientSecret: process.env.TWITCH_CLIENT_SECRET,
+
+    public: {
+      twitchClientId: process.env.TWITCH_CLIENT_ID
+    }
+  }
 })

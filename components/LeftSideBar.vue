@@ -1,11 +1,33 @@
 <script setup lang="ts">
 import texts from '@/assets/data/texts.json'
+import { ref, watchEffect } from 'vue'
+import type { TwitchStream } from '~/server/api/streams'
+import type { TwitchUser } from '~/server/api/users'
 
-const channels = [
-  { username: 'Miduncy', game: 'Coding Live', viewers: '2.3K' },
-  { username: 'Miduxokas', game: 'Debugging Sessions', viewers: '1.1K' },
-  { username: 'Midubai', game: 'Frontend Fun', viewers: '50K' },
-]
+const { data: streamsData, status, error } = useFetch<TwitchStream[]>('/api/streams')
+const channels = ref<TwitchStream[]>([])
+const users = ref<{ [key: string]: TwitchUser }>({})
+
+watchEffect(async () => {
+  if (streamsData.value) {
+    channels.value = streamsData.value.slice(0, 7)
+
+    const userIds = channels.value.map((stream) => stream.user_id)
+
+    if (userIds.length > 0) {
+      try {
+        const usersData = await $fetch<TwitchUser[]>(`/api/users?ids=${userIds.join(',')}`)
+        users.value = Object.fromEntries(usersData.map((user) => [user.id, user]))
+      } catch {
+        throw new Error('Error fetching users:')
+      }
+    }
+  }
+})
+
+const formatViewers = (count: number) => {
+  return count >= 1000 ? `${(count / 1000).toFixed(1)}K` : count.toString()
+}
 </script>
 
 <template>
@@ -19,14 +41,21 @@ const channels = [
       />
     </div>
 
-    <div class="recommended-channels__list">
-      <LeftsidebarComponentsRecomendedChanels
-        v-for="channel in channels"
-        :key="channel.username"
-        :username="channel.username"
-        :game="channel.game"
-        :viewers="channel.viewers"
-      />
+    <div v-if="status === 'pending'" class="loading-container">
+      <div class="spinner" />
+    </div>
+    <div v-else-if="error" class="error-text">Error loading channels</div>
+    <div v-else class="recommended-channels__list">
+      <ClientOnly>
+        <LeftsidebarComponentsRecomendedChanels
+          v-for="channel in channels"
+          :key="channel.id"
+          :username="channel.user_name"
+          :game="channel.game_name"
+          :viewers="formatViewers(channel.viewer_count)"
+          :avatar="users[channel.user_id]?.profile_image_url || ''"
+        />
+      </ClientOnly>
     </div>
   </section>
 </template>
@@ -60,6 +89,24 @@ const channels = [
   &__list {
     display: flex;
     flex-direction: column;
+  }
+
+  .spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 </style>
