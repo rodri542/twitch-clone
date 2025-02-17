@@ -2,8 +2,15 @@
 
 <template>
   <div class="HomePage">
-    <HomepageComponentsStreamerBlock />
+    <ClientOnly>
+      <HomepageComponentsStreamerBlock />
+      <HomepageComponentsStreamerBlock />
+    </ClientOnly>
     <HomepageComponentsCategoriesBlock />
+    <ClientOnly>
+      <HomepageComponentsStreamerBlock />
+      <HomepageComponentsStreamerBlock />
+    </ClientOnly>
   </div>
 </template>
 

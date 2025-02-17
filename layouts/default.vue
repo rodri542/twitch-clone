@@ -14,7 +14,6 @@
 
 .sidebar {
   @include responsive('sm') {
-    grid-template-columns: repeat(3, 1fr);
     display: none;
   }
 }

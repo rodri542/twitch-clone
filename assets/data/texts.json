@@ -50,7 +50,8 @@
     "More": "/icons/more.svg",
     "Notification": "/icons/notification.svg",
     "Profile": "/icons/profile.svg",
-    "Search": "/icons/search.svg"
+    "Search": "/icons/search.svg",
+    "verified": "/icons/verified.svg"
   },
   "Images":{
     "Logo": ""
