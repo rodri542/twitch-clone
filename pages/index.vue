@@ -1,16 +1,12 @@
-<script script setup lang="ts"></script>
-
 <template>
   <div class="HomePage">
-    <ClientOnly>
-      <HomepageComponentsStreamerBlock />
-      <HomepageComponentsStreamerBlock />
-    </ClientOnly>
+    <HomepageComponentsStreamerBlock :chunk-index="0" />
+    <HomepageComponentsStreamerBlock :chunk-index="1" />
+
     <HomepageComponentsCategoriesBlock />
-    <ClientOnly>
-      <HomepageComponentsStreamerBlock />
-      <HomepageComponentsStreamerBlock />
-    </ClientOnly>
+
+    <HomepageComponentsStreamerBlock :chunk-index="2" />
+    <HomepageComponentsStreamerBlock :chunk-index="3" />
   </div>
 </template>
 

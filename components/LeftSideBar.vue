@@ -1,29 +1,13 @@
 <script setup lang="ts">
 import texts from '@/assets/data/texts.json'
-import { ref, watchEffect } from 'vue'
-import type { TwitchStream } from '~/server/api/streams'
-import type { TwitchUser } from '~/server/api/users'
+import { useStreamsStore } from '~/stores/streams'
+import { useUsersStore } from '~/stores/users'
 
-const { data: streamsData, status, error } = useFetch<TwitchStream[]>('/api/streams')
-const channels = ref<TwitchStream[]>([])
-const users = ref<{ [key: string]: TwitchUser }>({})
+const streamsStore = useStreamsStore()
+const usersStore = useUsersStore()
 
-watchEffect(async () => {
-  if (streamsData.value) {
-    channels.value = streamsData.value.slice(0, 7)
-
-    const userIds = channels.value.map((stream) => stream.user_id)
-
-    if (userIds.length > 0) {
-      try {
-        const usersData = await $fetch<TwitchUser[]>(`/api/users?ids=${userIds.join(',')}`)
-        users.value = Object.fromEntries(usersData.map((user) => [user.id, user]))
-      } catch {
-        throw new Error('Error fetching users:')
-      }
-    }
-  }
-})
+await streamsStore.fetchStreams()
+await usersStore.fetchUsers()
 
 const formatViewers = (count: number) => {
   return count >= 1000 ? `${(count / 1000).toFixed(1)}K` : count.toString()
@@ -41,21 +25,19 @@ const formatViewers = (count: number) => {
       />
     </div>
 
-    <div v-if="status === 'pending'" class="loading-container">
+    <div v-if="streamsStore.loading" class="loading-container">
       <div class="spinner" />
     </div>
-    <div v-else-if="error" class="error-text">Error loading channels</div>
+    <div v-else-if="streamsStore.error" class="error-text">Error loading channels</div>
     <div v-else class="recommended-channels__list">
-      <ClientOnly>
-        <LeftsidebarComponentsRecomendedChanels
-          v-for="channel in channels"
-          :key="channel.id"
-          :username="channel.user_name"
-          :game="channel.game_name"
-          :viewers="formatViewers(channel.viewer_count)"
-          :avatar="users[channel.user_id]?.profile_image_url || ''"
-        />
-      </ClientOnly>
+      <LeftsidebarComponentsRecomendedChanels
+        v-for="channel in streamsStore.getStreams.slice(0, 7)"
+        :key="channel.id"
+        :username="channel.user_name"
+        :game="channel.game_name"
+        :viewers="formatViewers(channel.viewer_count)"
+        :avatar="usersStore.getUsers[channel.user_id]?.profile_image_url || ''"
+      />
     </div>
   </section>
 </template>

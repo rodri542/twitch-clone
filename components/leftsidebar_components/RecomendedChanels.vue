@@ -1,48 +1,34 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   username: string
   game: string
   viewers: string
   avatar?: string
 }>()
-
-const imageLoaded = ref(false)
-
-watchEffect(() => {
-  imageLoaded.value = false
-
-  if (props.avatar) {
-    const img = new Image()
-    img.src = props.avatar
-    img.onload = () => {
-      imageLoaded.value = true
-    }
-  }
-})
 </script>
 
 <template>
   <div class="recommended-channels__item">
     <div class="recommended-channels__user">
       <div class="recommended-channels__avatar">
-        <div v-if="!imageLoaded" class="recommended-channels__avatar-spinner" />
+        <div v-if="!avatar" class="recommended-channels__avatar-spinner" />
         <img
-          v-if="imageLoaded"
+          v-if="avatar"
           class="recommended-channels__avatar-img"
-          :src="props.avatar"
-          :alt="`${props.username} avatar`"
+          :src="avatar"
+          :alt="`${username} avatar`"
         />
       </div>
 
       <div class="recommended-channels__info">
-        <span class="recommended-channels__username">{{ props.username }}</span>
-        <span class="recommended-channels__game">{{ props.game }}</span>
+        <span class="recommended-channels__username">{{ username }}</span>
+        <span class="recommended-channels__game">{{ game }}</span>
       </div>
     </div>
 
     <div class="recommended-channels__status">
       <span class="recommended-channels__live-dot" />
-      <span class="recommended-channels__viewers">{{ props.viewers }}</span>
+      <span class="recommended-channels__viewers">{{ viewers }}</span>
     </div>
   </div>
 </template>

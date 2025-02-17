@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import texts from '@/assets/data/texts.json'
-const props = defineProps<{
+defineProps<{
   thumbnail: string
   title: string
   username: string
@@ -8,20 +8,6 @@ const props = defineProps<{
   tags: string[]
   avatar: string
 }>()
-
-const imageLoaded = ref(false)
-
-watchEffect(() => {
-  imageLoaded.value = false
-
-  if (props.avatar) {
-    const img = new Image()
-    img.src = props.avatar
-    img.onload = () => {
-      imageLoaded.value = true
-    }
-  }
-})
 </script>
 
 <template>
@@ -31,7 +17,7 @@ watchEffect(() => {
     </div>
     <div class="stream-card__info">
       <div class="stream-card__avatar">
-        <div v-if="!imageLoaded" class="stream-card__avatar-spinner" />
+        <div v-if="!avatar" class="stream-card__avatar-spinner" />
         <img v-else :src="avatar" alt="Avatar {{avatar}}" />
       </div>
       <div class="stream-card__details">
