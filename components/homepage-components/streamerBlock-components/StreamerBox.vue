@@ -39,6 +39,7 @@ defineProps<{
 <style lang="scss" scoped>
 @use 'sass:map';
 @use '@/assets/styles/vars.scss' as *;
+@use '@/assets/styles/main.scss' as *;
 
 .stream-card {
   width: 28rem;
@@ -112,6 +113,9 @@ defineProps<{
     font-size: 0.625rem;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
+  }
+  @include responsive('lg') {
+    width: 22rem;
   }
 }
 

@@ -34,6 +34,11 @@ await usersStore.fetchUsers()
   display: flex;
   width: 100%;
   padding: 0.75rem 0;
+
+  @include responsive('md') {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .streams-grid__content {
@@ -42,5 +47,15 @@ await usersStore.fetchUsers()
   width: 100%;
   max-width: 100%;
   gap: 0.625rem;
+
+  @include responsive('md') {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  @include responsive('sm') {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 </style>

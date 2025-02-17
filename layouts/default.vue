@@ -13,6 +13,12 @@
 @use '/assets/styles/main.scss' as *;
 
 .sidebar {
+  position: sticky;
+  top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow-y: hidden;
+  z-index: 999;
+
   @include responsive('sm') {
     display: none;
   }

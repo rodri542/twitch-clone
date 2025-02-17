@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import texts from '@/assets/data/texts.json'
 import { useCategoriesStore } from '~/stores/categories'
 import { onMounted } from 'vue'
 
@@ -11,13 +12,10 @@ onMounted(() => {
 
 <template>
   <section class="categories">
-    <div v-if="categoriesStore.loading" class="categories__message categories__message--loading">
-      Cargando...
-    </div>
-    <div v-if="categoriesStore.error" class="categories__message categories__message--error">
+    <div v-if="categoriesStore.loading">{{ texts.HomePageTexts.chrg }}</div>
+    <div v-if="categoriesStore.error">
       {{ categoriesStore.error }}
     </div>
-
     <ul v-if="!categoriesStore.loading" class="categories__list">
       <li
         v-for="category in categoriesStore.categories"
@@ -27,9 +25,9 @@ onMounted(() => {
         <img :src="category.box_art_url" :alt="category.name" class="categories__image" />
         <div class="categories__info">
           <p class="categories__name">{{ category.name }}</p>
-          <p class="categories__viewers">23K viewers</p>
+          <p class="categories__viewers">{{ texts.HomePageTexts.views }}</p>
           <div class="categories__tags">
-            <span class="categories__tag">Gaming</span>
+            <span class="categories__tag">{{ texts.HomePageTexts.catag }}</span>
           </div>
         </div>
       </li>
@@ -53,17 +51,6 @@ onMounted(() => {
     margin-bottom: 1rem;
   }
 
-  &__message {
-    text-align: center;
-    font-size: 1.2rem;
-    &--loading {
-      color: #ffaa00;
-    }
-    &--error {
-      color: #ff4d4d;
-    }
-  }
-
   &__list {
     display: flex;
     flex-direction: row;
@@ -71,6 +58,16 @@ onMounted(() => {
     gap: 1rem;
     padding: 0;
     list-style: none;
+
+    @include responsive('lg') {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+
+    @include responsive('xs') {
+      flex-direction: column;
+      align-items: start;
+    }
   }
 
   &__item {
@@ -93,32 +90,30 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: 4px;
+      gap: 0.25rem;
 
       .categories__name {
         font-size: 0.9rem;
         font-weight: bold;
-        color: white;
       }
 
       .categories__viewers {
         font-size: 0.8rem;
-        color: #b0b0b0;
+        color: map.get($text-colors, 'secundary-text-color');
       }
 
       .categories__tags {
-        margin-top: 5px;
+        margin-top: 0.25rem;
         display: flex;
         justify-content: center;
-        gap: 5px;
+        gap: 0.25rem;
 
         .categories__tag {
           cursor: pointer;
-          background: #333;
-          padding: 4px 8px;
-          border-radius: 4px;
+          background: map.get($button-colors, 'secondary');
+          padding: 0.25rem 0.5rem;
+          border-radius: 25rem;
           font-size: 0.7rem;
-          color: #fff;
         }
       }
     }
