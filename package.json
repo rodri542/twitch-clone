@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "nuxt": "^3.15.4",
+    "pinia": "^3.0.1",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -34,6 +35,6 @@
     "vue-tsc": "^2.1.10"
   },
   "lint-staged": {
-  "*.{ts,vue,js,json,scss}": "eslint --fix && prettier --write"
-}
+    "*.{ts,vue,js,json,scss}": "eslint --fix && prettier --write"
+  }
 }
