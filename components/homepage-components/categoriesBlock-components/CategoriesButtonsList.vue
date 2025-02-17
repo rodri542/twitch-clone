@@ -18,12 +18,16 @@ import texts from '@/assets/data/texts.json'
 @use '@/assets/styles/main.scss' as *;
 
 .categories-container {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  padding: 0.6rem;
+  padding: 1rem 0;
+  padding-bottom: 2rem;
 
   @include responsive('lg') {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 

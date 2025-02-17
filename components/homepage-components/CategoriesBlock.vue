@@ -7,6 +7,7 @@ import texts from '@/assets/data/texts.json'
       :principal-text="texts.HomePageTexts.Cat"
       :secondary-text="texts.HomePageTexts.WeThink"
     />
+    <HomepageComponentsCategoriesBlockComponentsCategoriesCardsList />
     <HomepageComponentsCategoriesBlockComponentsCategoriesButtonsList />
   </section>
 </template>

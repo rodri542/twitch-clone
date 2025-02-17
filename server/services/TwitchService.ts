@@ -4,12 +4,14 @@ interface APIUrls {
   token: string
   streams: string
   users: string
+  categories: string
 }
 
 const API_URLS: APIUrls = {
   token: 'https://id.twitch.tv/oauth2/token',
   streams: 'https://api.twitch.tv/helix/streams',
   users: 'https://api.twitch.tv/helix/users',
+  categories: 'https://api.twitch.tv/helix/games/top',
 }
 
 export default class TwitchService {
@@ -95,5 +97,29 @@ export default class TwitchService {
 
     const data: { data: TwitchUser[] } = await response.json()
     return data
+  }
+
+  async getTopCategories() {
+    const token = await this.getAccessToken()
+    const url = `${API_URLS.categories}?first=6`
+
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'Client-ID': this.clientId,
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`Error ${response.status}: ${errorText}`)
+      }
+
+      const data = await response.json()
+      return data.data
+    } catch {
+      return []
+    }
   }
 }

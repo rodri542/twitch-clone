@@ -24,7 +24,7 @@ export const useUsersStore = defineStore('users', () => {
       const usersData = await $fetch<TwitchUser[]>(`/api/users?ids=${userIds.join(',')}`)
       users.value = Object.fromEntries(usersData.map((user) => [user.id, user]))
     } catch {
-      throw new Error('Error fetching streams')
+      throw new Error('Error fetching users')
     } finally {
       loading.value = false
     }

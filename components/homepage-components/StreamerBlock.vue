@@ -18,7 +18,7 @@ const chunkedStreams = computed(() => streamsStore.chunkedStreams)
       :principal-text="texts.HomePageTexts.LiveChan"
       :secondary-text="texts.HomePageTexts.WeThink"
     />
-    <div v-if="streamsStore.loadingChunked" class="loading-container">
+    <div v-show="streamsStore.loadingChunked" class="loading-container">
       <div class="spinner" />
     </div>
     <ClientOnly>
