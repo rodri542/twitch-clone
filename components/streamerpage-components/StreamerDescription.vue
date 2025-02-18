@@ -1,7 +1,5 @@
 <template>
   <div class="about-container">
-    <h2 class="about-title">About Miduuxeneize</h2>
-
     <div class="about-content">
       <p class="about-followers"><strong>184M</strong> followers</p>
       <p class="about-description">
@@ -44,11 +42,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.about-title {
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
 .about-content {

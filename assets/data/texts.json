@@ -23,7 +23,9 @@
 
   },
   "StreamPageTexts":{
-    "Live": "LIVE"
+    "Live": "LIVE",
+    "About": "About"
+
 
   },
   "Categories": [

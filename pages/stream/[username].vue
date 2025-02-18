@@ -38,6 +38,7 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
         :viewers="userStream!.viewer_count"
         :time="'3:23:05'"
       />
+      <h2 class="title">About {{ userStream!.user_name }}</h2>
       <StreamerDescription />
     </ClientOnly>
   </div>
@@ -49,5 +50,12 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: start;
+  align-self: flex-start;
+  padding-bottom: 1rem;
 }
 </style>

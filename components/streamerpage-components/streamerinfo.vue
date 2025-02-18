@@ -120,7 +120,7 @@ const formatViewers = (viewers: number): string => {
       padding-bottom: 0.5em;
 
       .streamer-info__username {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: bold;
       }
 
