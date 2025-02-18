@@ -24,9 +24,12 @@
   },
   "StreamPageTexts":{
     "Live": "LIVE",
-    "About": "About"
-
-
+    "About": "About",
+    "followers": "followers",
+    "YouTube": "YouTube",
+    "Instagram": "Instagram",
+    "Twitter": "Twitter",
+    "TikTok": "TikTok"
   },
   "Categories": [
     {
@@ -66,7 +69,11 @@
     "verified": "/icons/verified.svg",
     "share": "/icons/share.svg",
     "love": "/icons/love.svg",
-    "star": "/icons/star.svg"
+    "star": "/icons/star.svg",
+    "YouTube": "/icons/youtube.svg",
+    "Instagram": "/icons/instagram.svg",
+    "Twitter": "/icons/twitter.svg",
+    "TikTok": "/icons/tiktok.svg"
   },
   "Images":{
     "conf": "/images/conf.png",

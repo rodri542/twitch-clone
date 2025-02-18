@@ -26,7 +26,7 @@ export default defineEventHandler(async (event): Promise<TwitchUser[]> => {
   if (userIds.length === 0) throw new Error('No broadcaster IDs provided')
 
   const response = await twitchService.getUsersInfo(userIds)
-
+  console.log(response)
   return response.data.map(
     (user): TwitchUser => ({
       id: user.id,

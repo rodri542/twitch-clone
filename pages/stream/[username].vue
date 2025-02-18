@@ -39,7 +39,7 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
         :time="'3:23:05'"
       />
       <h2 class="title">About {{ userStream!.user_name }}</h2>
-      <StreamerDescription />
+      <StreamerDescription :description="userInfo.description" :viewers="userInfo.view_count" />
     </ClientOnly>
   </div>
 </template>

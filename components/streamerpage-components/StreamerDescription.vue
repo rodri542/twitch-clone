@@ -1,10 +1,19 @@
+<script setup lang="ts">
+import texts from '@/assets/data/texts.json'
+defineProps<{
+  description: string
+  viewers: number
+}>()
+</script>
+
 <template>
   <div class="about-container">
     <div class="about-content">
-      <p class="about-followers"><strong>184M</strong> followers</p>
+      <p class="about-followers">
+        <strong>{{ viewers }}</strong> {{ texts.StreamPageTexts.followers }}
+      </p>
       <p class="about-description">
-        Bienvenidos a este canal de Twitch donde vamos a hablar principalmente de Fútbol. Soy más
-        bostero que salir tricampeón mundial.
+        {{ description }}
       </p>
     </div>
 
@@ -12,20 +21,20 @@
 
     <div class="about-socials">
       <span class="social">
-        <img src="" alt="YouTube" />
-        YouTube
+        <img :src="texts.Icons.YouTube" alt="YouTube" />
+        {{ texts.StreamPageTexts.YouTube }}
       </span>
       <span class="social">
-        <img src="" alt="Instagram" />
-        Instagram
+        <img :src="texts.Icons.YouTube" alt="Instagram" />
+        {{ texts.StreamPageTexts.Instagram }}
       </span>
       <span class="social">
-        <img src="" alt="Twitter" />
-        Twitter
+        <img :src="texts.Icons.YouTube" alt="Twitter" />
+        {{ texts.StreamPageTexts.Twitter }}
       </span>
       <span class="social">
-        <img src="" alt="TikTok" />
-        TikTok
+        <img :src="texts.Icons.YouTube" alt="TikTok" />
+        {{ texts.StreamPageTexts.TikTok }}
       </span>
     </div>
   </div>
