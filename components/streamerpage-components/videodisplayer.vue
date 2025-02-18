@@ -27,7 +27,7 @@ defineProps<{ thumbnail: string }>()
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
 }
 
 .video-thumbnail {

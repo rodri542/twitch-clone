@@ -39,23 +39,24 @@
 .content {
   flex: 1;
   overflow-y: scroll;
-  /* Oculta la scrollbar en navegadores WebKit (Chrome, Safari, Edge) */
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
 
-  /* Oculta la scrollbar en Firefox */
   scrollbar-width: none;
 }
 
 .chat-sidebar {
   position: sticky;
-  height: calc(100vh);
-  width: 21.31rem;
+  max-width: 21.31rem;
+  max-height: 91vh;
   z-index: 999;
-  right: 0;
   background-color: map-get($bg-colors, 'nav-background-color');
-  overflow-y: auto;
+  overflow-y: hidden;
+
+  @include responsive('lg') {
+    display: none;
+  }
 }
 </style>

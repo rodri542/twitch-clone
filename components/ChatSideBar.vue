@@ -1,5 +1,9 @@
 <template>
-  <section class="chat" />
+  <section class="chat">
+    <ChatComponentsChatHeader />
+    <ChatComponentsChatGifts />
+    <ChatComponentsChatInput />
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -8,7 +12,6 @@
 
 .chat {
   width: 100%;
-  height: 100vh;
   background-color: map-get($bg-colors, 'nav-background-color');
   display: flex;
   flex-direction: column;

@@ -20,7 +20,6 @@
     "err": "Error",
     "views": "23K viewers",
     "catag": "Gaming"
-
   },
   "StreamPageTexts":{
     "Live": "LIVE",
@@ -29,7 +28,56 @@
     "YouTube": "YouTube",
     "Instagram": "Instagram",
     "Twitter": "Twitter",
-    "TikTok": "TikTok"
+    "TikTok": "TikTok",
+    "schat": "STREAM CHAT",
+    "giftSub": "Gift a Sub now to be #1!",
+    "wlcom": "Welcome to the chat room!",
+    "sendMessage": "Send a message",
+    "chat": [
+      {
+        "id": 1,
+        "username": "poncyG",
+        "message": "Como anda la bandurria?",
+        "isSubscriber": true
+      },
+      {
+        "id": 2,
+        "username": "midgarcia1manue",
+        "message": "como estamos con la publicidad que twitch de mierda",
+        "isSubscriber": false
+      },
+      {
+        "id": 3,
+        "username": "rombo",
+        "message": "desde que se fue de mi vida ahora me duele su nombre, que hago miduu?",
+        "isSubscriber": false
+      },
+      {
+        "id": 4,
+        "username": "poncyG",
+        "message": "BOCAAAAAAAAAAAA",
+        "isSubscriber": true
+      },
+      {
+        "id": 5,
+        "username": "pelu12",
+        "message": "Hansi Flick es el mejor técnico en 2024???",
+        "isSubscriber": false
+      },
+      {
+        "id": 6,
+        "username": "guerrin",
+        "message": "tengo al traumatologo escuchando al lado xD",
+        "isSubscriber": false
+      },
+      {
+        "id": 7,
+        "username": "poncyG",
+        "message": "BOCAAAAAAAAAAAA",
+        "isSubscriber": true
+      }
+    ]
+
   },
   "Categories": [
     {
@@ -73,13 +121,20 @@
     "YouTube": "/icons/youtube.svg",
     "Instagram": "/icons/instagram.svg",
     "Twitter": "/icons/twitter.svg",
-    "TikTok": "/icons/tiktok.svg"
+    "arrow": "/icons/arrow.svg",
+    "bits": "/icons/bits.svg",
+    "chatStar": "/icons/chatStar.svg",
+    "info": "/icons/info.svg",
+    "persons": "/icons/persons.svg",
+    "smilingFaces": "/icons/smilingFace.svg",
+    "X": "/icons/X.svg"
   },
   "Images":{
     "conf": "/images/conf.png",
     "max": "/images/max.png",
     "play": "/images/play.png",
-    "volume": "/images/volume.png"
+    "volume": "/images/volume.png",
+    "Gift": "/images/Gift.png"
   }
 
   }

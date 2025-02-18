@@ -45,7 +45,7 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
 </template>
 <style lang="scss" scoped>
 .streamer-page {
-  width: 100%;
+  min-width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
