@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import StreamerDescription from '~/components/streamerpage-components/StreamerDescription.vue'
 import { useStreamsStore } from '~/stores/streams'
 import { useUsersStore } from '~/stores/users'
 
@@ -27,8 +28,8 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
 <template>
   <div class="streamer-page">
     <ClientOnly>
-      <StreamerpageComponentsVideodisplayer :thumbnail="userStream!.thumbnail_url" />
-      <StreamerpageComponentsStreamerinfo
+      <StreamerpageComponentsVideoDisplayer :thumbnail="userStream!.thumbnail_url" />
+      <StreamerpageComponentsStreamerInfo
         :username="userStream!.user_name"
         :title="userStream!.title"
         :category="userStream!.game_name"
@@ -37,12 +38,13 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
         :viewers="userStream!.viewer_count"
         :time="'3:23:05'"
       />
+      <StreamerDescription />
     </ClientOnly>
   </div>
 </template>
 <style lang="scss" scoped>
 .streamer-page {
-  width: calc(100% - 20rem);
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;

@@ -33,8 +33,8 @@ defineProps<{ thumbnail: string }>()
 .video-thumbnail {
   position: relative;
   width: 100%;
-  height: 29.62rem;
-  max-width: 51.62rem;
+  // height: 29.62rem;
+  // max-width: 51.62rem;
 
   &--video {
     position: relative;

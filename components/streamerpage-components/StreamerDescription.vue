@@ -1,0 +1,100 @@
+<template>
+  <div class="about-container">
+    <h2 class="about-title">About Miduuxeneize</h2>
+
+    <div class="about-content">
+      <p class="about-followers"><strong>184M</strong> followers</p>
+      <p class="about-description">
+        Bienvenidos a este canal de Twitch donde vamos a hablar principalmente de Fútbol. Soy más
+        bostero que salir tricampeón mundial.
+      </p>
+    </div>
+
+    <hr class="about-divider" />
+
+    <div class="about-socials">
+      <span class="social">
+        <img src="" alt="YouTube" />
+        YouTube
+      </span>
+      <span class="social">
+        <img src="" alt="Instagram" />
+        Instagram
+      </span>
+      <span class="social">
+        <img src="" alt="Twitter" />
+        Twitter
+      </span>
+      <span class="social">
+        <img src="" alt="TikTok" />
+        TikTok
+      </span>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use '@/assets/styles/vars.scss' as *;
+
+.about-container {
+  background-color: map-get($bg-colors, 'nav-background-color');
+  padding: 1.5rem;
+  margin: 0 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .about-followers {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+    color: map-get($text-colors, 'secundary-text-color');
+  }
+}
+
+.about-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0.5rem 0;
+}
+
+.about-socials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+</style>
