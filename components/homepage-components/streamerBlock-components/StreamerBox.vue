@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import texts from '@/assets/data/texts.json'
-defineProps<{
+const props = defineProps<{
   thumbnail: string
   title: string
   username: string
@@ -8,10 +8,16 @@ defineProps<{
   tags: string[]
   avatar: string
 }>()
+
+const router = useRouter()
+
+const goToStreamerPage = () => {
+  router.push(`/stream/${props.username}`)
+}
 </script>
 
 <template>
-  <div class="stream-card">
+  <div class="stream-card" @click="goToStreamerPage">
     <div class="stream-card__thumbnail">
       <img :src="thumbnail" :alt="title" />
     </div>

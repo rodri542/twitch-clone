@@ -4,8 +4,9 @@
   },
   "ButtonTexts": {
     "loginButton": "Log In",
-    "signUpButton": "Log In"
-    
+    "signUpButton": "Log In",
+    "Follow": "Follow",
+    "Subscribe": "Subscribe"
   },
   "LeftSideBarTexts":{
     "recomChan": "RECOMMENDED CHANNELS"
@@ -19,6 +20,10 @@
     "err": "Error",
     "views": "23K viewers",
     "catag": "Gaming"
+
+  },
+  "StreamPageTexts":{
+    "Live": "LIVE"
 
   },
   "Categories": [
@@ -56,10 +61,16 @@
     "Notification": "/icons/notification.svg",
     "Profile": "/icons/profile.svg",
     "Search": "/icons/search.svg",
-    "verified": "/icons/verified.svg"
+    "verified": "/icons/verified.svg",
+    "share": "/icons/share.svg",
+    "love": "/icons/love.svg",
+    "star": "/icons/star.svg"
   },
   "Images":{
-    "Logo": ""
+    "conf": "/images/conf.png",
+    "max": "/images/max.png",
+    "play": "/images/play.png",
+    "volume": "/images/volume.png"
   }
 
   }
