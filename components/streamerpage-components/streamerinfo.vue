@@ -153,11 +153,11 @@ const formatViewers = (viewers: number): string => {
       justify-content: space-between;
 
       .streamer-info__title {
-        color: map-get($text-colors, 'secundary-text-color');
+        color: map.get($text-colors, 'secundary-text-color');
       }
 
       .streamer-info__cat {
-        color: map-get($text-colors, 'especial-text-color');
+        color: map.get($text-colors, 'especial-text-color');
         text-decoration: none;
       }
     }
@@ -177,7 +177,7 @@ const formatViewers = (viewers: number): string => {
 
       &-time {
         padding-left: 1rem;
-        color: map-get($text-colors, 'secundary-text-color');
+        color: map.get($text-colors, 'secundary-text-color');
       }
 
       &-icon {
@@ -199,7 +199,7 @@ const formatViewers = (viewers: number): string => {
     gap: 0.5rem;
 
     .streamer-info__tag {
-      background: map-get($button-colors, 'secondary');
+      background: map.get($button-colors, 'secondary');
       padding: 0.3rem 0.6rem;
       border-radius: 0.5rem;
       font-size: 0.75rem;

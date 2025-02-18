@@ -67,19 +67,19 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
 
 .chat-input {
   width: 100%;
-  background: map-get($bg-colors, 'nav-background-color');
+  background: map.get($bg-colors, 'nav-background-color');
   padding: 1rem;
   display: flex;
   flex-direction: column;
 
   &__slow-mode {
     align-items: center;
-    color: map-get($text-colors, 'secundary-text-color');
+    color: map.get($text-colors, 'secundary-text-color');
     font-size: 0.875rem;
     background: rgba(42, 42, 46, 0.95);
     padding-top: 0.5rem;
     border-radius: 0.5rem;
-    border: 0.0625rem solid map-get($bg-colors, 'borders-color');
+    border: 0.0625rem solid map.get($bg-colors, 'borders-color');
 
     &-container {
       padding-left: 0.5rem;
@@ -110,7 +110,7 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
   &__container {
     position: relative;
     background: rgba(31, 31, 35, 0.95);
-    border: 0.0625rem solid map-get($bg-colors, 'borders-color');
+    border: 0.0625rem solid map.get($bg-colors, 'borders-color');
     border-radius: 0.5rem;
     padding-top: 0.25rem;
     margin: 0;

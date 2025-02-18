@@ -26,7 +26,7 @@ import texts from '@/assets/data/texts.json'
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1rem;
-    border-bottom: 0.0625rem solid map-get($bg-colors, 'lines-colors');
+    border-bottom: 0.0625rem solid map.get($bg-colors, 'lines-colors');
   }
 
   &__back,

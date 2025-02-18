@@ -52,7 +52,7 @@
   max-width: 21.31rem;
   max-height: 91vh;
   z-index: 999;
-  background-color: map-get($bg-colors, 'nav-background-color');
+  background-color: map.get($bg-colors, 'nav-background-color');
   overflow-y: hidden;
 
   @include responsive('lg') {

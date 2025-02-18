@@ -41,10 +41,11 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:map';
 @use '@/assets/styles/vars.scss' as *;
 
 .about-container {
-  background-color: map-get($bg-colors, 'nav-background-color');
+  background-color: map.get($bg-colors, 'nav-background-color');
   padding: 1.5rem;
   margin: 0 3rem;
   width: 100%;
@@ -65,7 +66,7 @@ defineProps<{
 
   .about-description {
     font-size: 0.9rem;
-    color: map-get($text-colors, 'secundary-text-color');
+    color: map.get($text-colors, 'secundary-text-color');
   }
 }
 

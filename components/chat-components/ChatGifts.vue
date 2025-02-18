@@ -34,7 +34,7 @@ import texts from '@/assets/data/texts.json'
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0;
-    border-bottom: 0.0625rem solid map-get($bg-colors, 'lines-colors');
+    border-bottom: 0.0625rem solid map.get($bg-colors, 'lines-colors');
   }
 
   &__nav {
@@ -73,7 +73,7 @@ import texts from '@/assets/data/texts.json'
   }
 
   &__text {
-    color: map-get($text-colors, 'especial-text-color');
+    color: map.get($text-colors, 'especial-text-color');
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.05em;

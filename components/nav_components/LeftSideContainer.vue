@@ -3,7 +3,7 @@ import texts from '@/assets/data/texts.json'
 </script>
 
 <template>
-  <div class="left-side">
+  <NuxtLink to="/" class="left-side">
     <div class="left-side__logo">
       <img
         src="/assets/images/logo_twitch.png"
@@ -13,7 +13,7 @@ import texts from '@/assets/data/texts.json'
       <span class="left-side__logo-text">{{ texts.navText.navLeftSideText }}</span>
       <img :src="texts.Icons.More" alt="Midutch Logo" class="left-side__logo-moresvg" />
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
@@ -22,6 +22,7 @@ import texts from '@/assets/data/texts.json'
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 
   &__logo {
     display: flex;

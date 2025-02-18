@@ -41,7 +41,7 @@ export default defineEventHandler(async (): Promise<TwitchStream[]> => {
       viewer_count: stream.viewer_count,
       started_at: stream.started_at,
       language: stream.language,
-      thumbnail_url: stream.thumbnail_url.replace('{width}x{height}', '320x180'),
+      thumbnail_url: stream.thumbnail_url.replace('{width}x{height}', '1920x1080'),
       tag_ids: stream.tag_ids,
       is_mature: stream.is_mature,
     }),
