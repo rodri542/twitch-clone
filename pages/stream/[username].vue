@@ -46,7 +46,12 @@ const isLoading = computed(() => streamsStore.loading || usersStore.loading)
     </ClientOnly>
   </div>
 </template>
+
 <style lang="scss" scoped>
+@use 'sass:map';
+@use '@/assets/styles/vars.scss' as *;
+@use '@/assets/styles/main.scss' as *;
+
 .streamer-page {
   min-width: 100%;
   height: 100vh;
