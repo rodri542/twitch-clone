@@ -4,8 +4,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   nitro: {
-    preset: 'cloudflare',
-    serveStatic: true,
+    preset: 'cloudflare-pages', // Configuración correcta para Cloudflare Pages
+    output: {
+      dir: '.output',
+      publicDir: '.output/public',
+    },
   },
   modules: ['@nuxt/eslint', '@pinia/nuxt'],
   css: ['~/assets/styles/reset.css', '~/assets/styles/main.scss'],
