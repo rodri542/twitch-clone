@@ -1,20 +1,41 @@
 @use "sass:map";
-$bg-colors: (
-    'main-background-color': #0E0E10,
+@use "reset";
+@use "vars" as *;
 
-);
-    
 
-@mixin page-container-conf{
-    background-color: map.get($bg-colors , 'main-background-color' );
+@mixin responsive($size) {
+    @media (max-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  }
+
+@mixin page-container-conf {
+    background-color: map.get($bg-colors, "main-background-color");
+    color: map.get($text-colors, "main-text-color");
+}
+
+@mixin nav-styles {
+    background-color: map.get($bg-colors, "nav-background-color");
+    width: 100%;
+    height: 3.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0.3125rem 1.25rem;
 }
 
 body,html{
-    background-color: map.get($bg-colors , 'main-background-color' );
-
+    @include page-container-conf();
 }
 
-.page-container{
-    @include page-container-conf;
+.main__index{
+    display: flex;
+    flex-direction: row;
+    padding: 1.25em 1.25em;
+    gap:  0.625rem;
+}
 
+.nav{
+    @include nav-styles();
 }

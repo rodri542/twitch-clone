@@ -1,0 +1,27 @@
+
+$bg-colors: (
+    'main-background-color': #0E0E10,
+    'nav-background-color': #18181B,
+    'borders-color': #DEDEE366,
+    'lines-colors': #53535F7A
+
+);
+
+$button-colors: (
+    'primary': #199AFC,
+    'secondary': #53535F61,
+);
+
+$text-colors: (
+    'main-text-color': white,
+    'especial-text-color':  #199AFC,
+    'secundary-text-color': #ADADB8
+);
+
+$breakpoints: (
+  "xs": 480px, 
+  "sm": 768px,  
+  "md": 1024px, 
+  "lg": 1280px, 
+  "xl": 1440px  
+);

@@ -1,6 +1,18 @@
-<script setup lang="ts"></script>
 <template>
-  <div class="page-container">
-    <h1>Este es tu index</h1>
+  <div class="HomePage">
+    <HomepageComponentsStreamerBlock :chunk-index="0" />
+    <HomepageComponentsStreamerBlock :chunk-index="1" />
+
+    <HomepageComponentsCategoriesBlock />
+
+    <HomepageComponentsStreamerBlock :chunk-index="2" />
+    <HomepageComponentsStreamerBlock :chunk-index="3" />
   </div>
 </template>
+
+<style scoped>
+.HomePage {
+  width: 100%;
+  gap: 2rem;
+}
+</style>
