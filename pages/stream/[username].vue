@@ -22,13 +22,16 @@ const userStream = computed(() =>
 
 const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id || ''])
 
-// const isLoading = computed(() => streamsStore.loading || usersStore.loading)
+const isLoading = computed(() => streamsStore.loading || usersStore.loading)
 </script>
 
 <template>
   <div class="streamer-page">
-    <ClientOnly>
-      <StreamerpageComponentsVideoDisplayer :thumbnail="userStream!.thumbnail_url" />
+    <div v-if="!userStream || isLoading" class="loading-container">
+      <div class="spinner" />
+    </div>
+    <ClientOnly v-else>
+      <StreamerpageComponentsVideoDisplayer :thumbnail="userStream?.thumbnail_url || ''" />
       <StreamerpageComponentsStreamerInfo
         :username="userStream!.user_name"
         :title="userStream!.title"
@@ -57,5 +60,23 @@ const userInfo = computed(() => usersStore.getUsers[userStream.value?.user_id ||
   text-align: start;
   align-self: flex-start;
   padding-bottom: 1rem;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid map.get($button-colors, 'secondary');
+  border-top-color: map.get($button-colors, 'primary');
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
