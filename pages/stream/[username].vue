@@ -69,6 +69,7 @@ const isLoading = computed(() => streamsStore.loading || usersStore.loading)
 
 .spinner {
   padding: 3rem;
+  margin: 3rem;
   width: 2.5rem;
   height: 2.5rem;
   border: 2px solid map.get($button-colors, 'secondary');
