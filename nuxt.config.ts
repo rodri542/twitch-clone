@@ -2,12 +2,8 @@
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
   nitro: {
-    preset: 'cloudflare-pages',
-    prerender: {
-      autoSubfolderIndex: false,
-    },
+    preset: 'cloudflare_pages',
   },
   modules: ['@nuxt/eslint', '@pinia/nuxt'],
   css: ['~/assets/styles/reset.css', '~/assets/styles/main.scss'],
